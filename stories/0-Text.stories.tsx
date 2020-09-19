@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { TextBody, TextBodyProps } from "../src/base/TextBody";
+import { TextBody } from "../src/core";
 
 export default {
   title: 'Text',
