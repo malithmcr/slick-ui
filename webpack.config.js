@@ -6,10 +6,11 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const baseConfig = {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -67,8 +68,8 @@ const baseConfig = {
     ]
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'build'),
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'dist'),
     library: ["[name]"],
     libraryTarget: 'umd',
   },
@@ -78,7 +79,7 @@ const baseConfig = {
   ],
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'index.css',
     }),
     new CleanWebpackPlugin(),
   ],
@@ -102,6 +103,7 @@ function createConfig(entry, name) {
 
 // Entry list
 const core = createConfig('./src/core/index.ts', 'core')
+const custom1 = createConfig('./src/custom1/index.ts', 'custom1')
 
 module.exports = (env, args) => {
   if (args.entryTarget === 'core') {
@@ -111,5 +113,6 @@ module.exports = (env, args) => {
   } 
   return [
     core,
+    custom1,
   ]
 }

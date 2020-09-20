@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/base/index.ts",
+  "types": "dist/types",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "webpack"
+    "build:types": "tsc -p ./tsconfig.types.json",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:types && webpack"
   },
   "keywords": [],
   "author": "",
