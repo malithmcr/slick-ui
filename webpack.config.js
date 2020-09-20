@@ -6,11 +6,10 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const baseConfig = {
-  mode: 'development',
+  mode: 'production',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
-  devtool: 'eval-source-map',
   module: {
     rules: [
       {
@@ -106,6 +105,7 @@ const core = createConfig('./src/core/index.ts', 'core')
 const custom1 = createConfig('./src/custom1/index.ts', 'custom1')
 
 module.exports = (env, args) => {
+  // Example for build on single entry.
   if (args.entryTarget === 'core') {
     return [
       core,

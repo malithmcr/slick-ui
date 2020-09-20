@@ -1,7 +1,7 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import React from 'react'
+import { Meta } from '@storybook/react/types-6-0'
 
-import { TextBody } from "../src/core";
+import { TextBody } from '../src/core'
 
 export default {
   title: 'Text',
@@ -12,7 +12,5 @@ export default {
 } as Meta
 
 export const text = (args) => {
-  return (
-    <TextBody {...args} />
-  )
+  return <TextBody {...args} />
 }

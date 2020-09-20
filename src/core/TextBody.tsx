@@ -4,22 +4,22 @@ interface TextBodyProps {
   /**
    * value
    */
-  value: string;
+  value: string
   /**
    * Class name
    */
-  className?: string;
+  className?: string
   /**
    * Color
    */
-  color?: string;
+  color?: string
 }
 
-const TextBody:React.FC<TextBodyProps>=({
-  className='',
-  color='blue',
-  value='Hello',
-}: TextBodyProps)=>{
+const TextBody: React.FC<TextBodyProps> = ({
+  className = '',
+  color = 'blue',
+  value = 'Hello',
+}: TextBodyProps) => {
   const style = {
     color,
   }
@@ -27,8 +27,7 @@ const TextBody:React.FC<TextBodyProps>=({
     <p style={style} className={className}>
       {value}
     </p>
-  );
-};
-
+  )
+}
 
 export default TextBody

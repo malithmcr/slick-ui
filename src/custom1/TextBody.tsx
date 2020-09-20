@@ -5,26 +5,23 @@ interface TextBodyProps {
   /**
    * value
    */
-  value: string;
+  value: string
   /**
    * Class name
    */
-  className?: string;
+  className?: string
   /**
    * Color
    */
-  color?: string;
+  color?: string
 }
 
-const TextBody:React.FC<TextBodyProps>=({
-  className='custom-1',
-  color='red',
-  value='Overrided',
-}: TextBodyProps)=>{
-  return (
-    <Base {...{color, className ,value}}/>
-  );
-};
-
+const TextBody: React.FC<TextBodyProps> = ({
+  className = 'custom-1',
+  color = 'red',
+  value = 'Overrided',
+}: TextBodyProps) => {
+  return <Base {...{ color, className, value }} />
+}
 
 export default TextBody
