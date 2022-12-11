@@ -1,56 +1,34 @@
 {
-  "name": "storybook-react-typescript-boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/",
-  "types": "./dist/types",
-  "files": [
-    "dist/"
-  ],
+  "name": "slick-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tw:watch": "npx tailwindcss -i src/tailwind.css -c tailwind.config.cjs -o src/style/index.css --watch",
+    "tw:build": "NODE_ENV=production npx tailwindcss -i src/tailwind.css -c tailwind.config.cjs -o src/style/index.css --minify",
     "storybook": "start-storybook -p 6006",
-    "prettier": "prettier './{src,stories}/**/**.{js,jsx,ts,tsx}' --write ",
-    "lint": "eslint './src/**/*.{js,jsx,ts,tsx}'",
-    "build-storybook": "build-storybook",
-    "clean": "rm -rf dist",
-    "check": "npm run prettier && npm run lint",
-    "build": "npm run clean && webpack"
+    "build-storybook": "build-storybook"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "preact": "^10.11.3"
+  },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@storybook/addon-actions": "^6.0.21",
-    "@storybook/addon-essentials": "^6.0.21",
-    "@storybook/addon-links": "^6.0.21",
-    "@storybook/react": "^6.0.21",
-    "@typescript-eslint/eslint-plugin": "^4.1.1",
-    "@typescript-eslint/parser": "^4.1.1",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "eslint": "^7.9.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-react": "^7.20.6",
-    "extract-loader": "^5.1.0",
-    "husky": "^4.3.0",
-    "less": "^3.12.2",
-    "less-loader": "^7.0.1",
-    "mini-css-extract-plugin": "^0.11.2",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "prettier": "^2.1.2",
-    "react-is": "^16.13.1",
-    "tailwindcss": "^1.8.10",
-    "ts-loader": "^8.0.4",
-    "typescript": "^4.0.3",
-    "webpack-cli": "^3.3.12"
-  },
-  "dependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run check",
-      "pre-push": "npm run check"
-    }
+    "@babel/core": "^7.20.5",
+    "@preact/preset-vite": "^2.4.0",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/builder-vite": "^0.2.5",
+    "@storybook/preact": "^6.5.14",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.3.0",
+    "core-js": "^3.26.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
   }
 }
